@@ -24,3 +24,8 @@ class Mae(Pessoa):
 
     def dancar(self):
         print(f'{self.nome} está dançando')
+
+
+mae1 = Mae('Rosilene', '222.333.444-55', 'parda')
+print(mae1.getCpf())
+
