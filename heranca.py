@@ -1,6 +1,6 @@
 #classe base
 
-class Pessoa:
+class Trouxa:
     def __init__(self, nome, cpf):
         self.nome = nome
         self.__cpf = cpf
@@ -15,17 +15,21 @@ class Pessoa:
         return self.__cpf 
 
 
-# criação classe mãe que herda atributos e métodos da classe Pessoa
+class Bruxo:
+    def __init__(self, casa, patrono) :
+        self.casa = casa
+        self.patrono = patrono
 
-class Mae(Pessoa):
-    def __init__(self, nome, cpf, corPele):
+    def lancarFeitico(self):
+        print('Lançou feitiço')
+
+
+class Mestico(Trouxa, Bruxo):
+    def __init__(self, nome, cpf, casa, patrono):
         super().__init__(nome, cpf)
-        self.corPele = corPele
-
-    def dancar(self):
-        print(f'{self.nome} está dançando')
+        Bruxo.__init__(self, casa, patrono)
 
 
-mae1 = Mae('Rosilene', '222.333.444-55', 'parda')
-print(mae1.getCpf())
+mestico1 = Mestico('Luna', '100.000.000-35','Grifinólia','coelho')
 
+mestico1.lancarFeitico()
