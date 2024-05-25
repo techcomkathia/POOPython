@@ -18,6 +18,9 @@ class Carro(Veiculo):
         self.nPortas = nPortas
         self.tipoCombustivel = tipoCombustivel
 
+    def exibirInformacoes(self):
+        print(f'O carro da {self. marca}, ano {self.anoFabricacao}, modelo {self.modelo}, {self.nPortas} portas, {self.tipoCombustivel}, custa R$ {self.preco}')
+
 #moto
 class Moto(Veiculo):
     def __init__(self, marca, modelo, anoFabricaco, preco, cilindradas, partida):
@@ -40,13 +43,14 @@ class Concessionaria:
     def listarTodosVeiculos(self):
         for veiculo in self.__listaVeiculos:
             veiculo.exibirInformacoes()
+            print(40*'*')
 
 
 DieguinhoCar = Concessionaria('Dieguinho Carros', 'Rua do Cheiro do Queijo Gorgonzola')
 
 carro1 = Carro('Honda', 'Civic', 2024, 160000.50, 5, 'flex')
-carro1.exibirInformacoes()
-
 DieguinhoCar.adicionarVeiculo(carro1)
+moto1 = Moto('Honda', 'PCX-125', '2024', 16400.9, 125,'eletrica')
+DieguinhoCar.adicionarVeiculo(moto1)
 
-DieguinhoCar.__listaVeiculos
+DieguinhoCar.listarTodosVeiculos()
